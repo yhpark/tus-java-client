@@ -46,6 +46,7 @@ public class TestTusExecutor {
         waiterThread.start();
 
         assertFalse(exec.makeAttempts());
+        assertTrue(Thread.interrupted());
     }
 
 

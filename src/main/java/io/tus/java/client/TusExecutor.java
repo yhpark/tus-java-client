@@ -109,6 +109,7 @@ public abstract class TusExecutor {
                 // Sleep for the specified delay before attempting the next retry.
                 Thread.sleep(delays[attempt]);
             } catch(InterruptedException e) {
+                Thread.currentThread().interrupt();
                 // If we get interrupted while waiting for the next retry, the user has cancelled
                 // the upload willingly and we return false as a signal.
                 return false;
